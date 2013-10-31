@@ -149,7 +149,7 @@ describe 'Spira resources' do
       test.age.should be_nil
       test.save
       test.age.should == 15
-      @repository.should have_statement RDF::Statement(@subject, RDF::FOAF.age, 15)
+      @repository.should have_statement RDF::Statement.new(@subject, RDF::FOAF.age, 15)
     end
   end
 
@@ -170,7 +170,7 @@ describe 'Spira resources' do
       test.age.should be_nil
       test.save
       test.age.should == 15
-      @repository.should_not have_statement RDF::Statement(@subject, RDF::FOAF.age, 15)
+      @repository.should_not have_statement RDF::Statement.new(@subject, RDF::FOAF.age, 15)
     end
 
   end
